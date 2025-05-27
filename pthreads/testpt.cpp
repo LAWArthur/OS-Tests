@@ -26,7 +26,7 @@ void *thread_main(void * data){
     char filename[256];
     sprintf(filename, "results/result%d", i);
     FILE* f = fopen(filename, "w");
-    fwrite(time_elps, sizeof(double), N_ITERS, f);
+    fwrite(time_elps[i], sizeof(double), N_ITERS, f);
     fclose(f);
     pthread_exit(NULL);
 }
